@@ -1,0 +1,58 @@
+# ============================================================
+# decoding-urban-aesthetics
+# Beyond Black-Box Assessment: Identifying Visual Properties
+# that Predict Aesthetic Attraction in Urban Architecture
+# ============================================================
+# Install: pip install -r requirements.txt
+#
+# Note: SAM must be installed separately (not on PyPI):
+#   pip install git+https://github.com/facebookresearch/segment-anything.git
+#
+# Note: For GPU support (strongly recommended for SAM),
+#   install PyTorch with CUDA from https://pytorch.org/get-started/locally/
+# ============================================================
+
+# ── Core Data & Numerics ────────────────────────────────────
+pandas>=2.0.0
+numpy>=1.24.0
+
+# ── Visualisation ───────────────────────────────────────────
+matplotlib>=3.7.0
+plotly>=5.20.0
+kaleido>=0.2.1              # plotly static image export
+
+# ── Machine Learning & Statistics ───────────────────────────
+scikit-learn>=1.3.0         # RandomForest, Lasso, Ridge, permutation_importance
+scipy>=1.11.0               # pearsonr, spearmanr, ttest_ind
+
+# ── Deep Learning (SAM backbone) ────────────────────────────
+torch>=2.0.0                # install CUDA version from pytorch.org for GPU
+torchvision>=0.15.0
+
+# ── Computer Vision ─────────────────────────────────────────
+opencv-python-headless>=4.8.0   # image processing, edge detection, Canny
+Pillow>=10.0.0                  # image loading and manipulation
+pycocotools>=2.0.6              # required by SAM
+
+# ── Claude API ──────────────────────────────────────────────
+anthropic>=0.25.0               # Claude API client
+
+# ── Jupyter Notebooks ───────────────────────────────────────
+jupyter>=1.0.0
+nbformat>=5.9.0
+nbconvert>=7.0.0
+ipykernel>=6.25.0
+
+# ── Utilities ───────────────────────────────────────────────
+requests>=2.31.0            # Geograph API image download
+tqdm>=4.66.0                # progress bars during SAM processing
+
+# ============================================================
+# SAM MODEL CHECKPOINT (run once, ~2.5 GB):
+#   wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+#
+# GOOGLE COLAB INSTALL (add to first notebook cell):
+#   !pip install git+https://github.com/facebookresearch/segment-anything.git -q
+#   !pip install opencv-python-headless pycocotools -q
+#   !wget -q https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+# ============================================================
