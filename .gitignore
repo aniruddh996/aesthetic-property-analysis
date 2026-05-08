@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+env/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# SAM checkpoint (2.5 GB — never commit)
+*.pth
+
+# Images (too large)
+*.jpg
+*.jpeg
+urban_400/
+landscape_400/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
